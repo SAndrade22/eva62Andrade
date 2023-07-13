@@ -26,15 +26,23 @@ public class DatosEva {
 		p.setDireccion("3 puentes");
 		p.setTelefono("099889076");
 		
-		daoPersona.insert(p);
-		
 		Inmueble i = new Inmueble();
 		i.setTipo("Terreno");
 		i.setPrecio(17.000);
 		i.setHectareas("500 m^2");
 		i.setDireccion("Av. Americas");
-		
 		daoInmueble.insert(i);
+		
+		Inmueble i2 = new Inmueble();
+		i2.setTipo("Edificio");
+		i2.setPrecio(53.000);
+		i2.setHectareas("1200 m^2");
+		i2.setDireccion("Av. Don Bosco y Av. Loja");
+		daoInmueble.insert(i2);
+		
+		p.addInmueble(i);
+		p.addInmueble(i2);
+		daoPersona.insert(p);
 		
 	}
 }

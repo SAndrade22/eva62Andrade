@@ -1,5 +1,6 @@
 package Modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -30,7 +31,7 @@ public class Persona {
 		
 		@OneToMany(cascade= CascadeType.ALL)
 		@JoinColumn(name="per_codigo")
-		private List<Inmueble> inmueble;
+		private List<Inmueble> inmuebles;
 		
 		public int getId() {
 			return codigo;
@@ -67,6 +68,22 @@ public class Persona {
 		}
 		public void setTelefono(String telefono) {
 			Telefono = telefono;
+		}
+		
+		public List<Inmueble> getInmueble() {
+			return inmuebles;
+		}
+
+		public void setInmueble(List<Inmueble> inmuebles) {
+			this.inmuebles = inmuebles;
+		}
+		
+		
+		public void addInmueble(Inmueble inmueble) {
+			if(inmuebles==null) {
+				inmuebles = new ArrayList<Inmueble>();
+			}
+			inmuebles.add(inmueble);
 		}
 		
 		@Override

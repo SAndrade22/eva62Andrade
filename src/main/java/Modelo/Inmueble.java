@@ -1,9 +1,14 @@
 package Modelo;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Inmueble {
@@ -20,6 +25,9 @@ public class Inmueble {
 	Double Precio;
 	@Column(name="inm_hectareas")
 	String Hectareas;
+	
+	
+	
 	public int getId() {
 		return Codigo;
 	}

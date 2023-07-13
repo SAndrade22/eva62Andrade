@@ -25,8 +25,8 @@ public class PersonaDAO implements Serializable {
 		em.merge(persona);
 	}
 	
-	public Persona read(int codigo) {
-		Persona p = em.find(Persona.class, codigo);
+	public Persona read(String cedula) {
+		Persona p = em.find(Persona.class, cedula);
 		return p;
 	}
 	
